@@ -130,12 +130,18 @@ function game(){
 
     if( playerScore > computerScore){
         console.log("%cYou won the match!", "color:green; font-size: 25px");
-        console.log("to replay, you can type game() again, or simply")
+        console.log(`to replay, you can type "game()" again and press enter, or simply press the "up" arrow key on your keyboard and then press enter.`)
     }
-    else if( playerScore < computerScore){
+    if( playerScore < computerScore){
         console.log("%cYou lost the match.", "color:red; font-size: 25px");
+        console.log(`to replay, you can type "game()" again and press enter, or simply press the "up" arrow key on your keyboard and then press enter.`)
+
     }
-    else{console.log("%cThe match ended in a draw.", "color:orange; font-size: 25px" )}
+    if( playerScore === computerScore){
+
+        console.log("%cThe match ended in a draw.", "color:orange; font-size: 25px" )
+        console.log(`to replay, you can type "game()" again and press enter, or simply press the "up" arrow key on your keyboard and then press enter.`)
+    }
 
 
     playerScore = 0;
