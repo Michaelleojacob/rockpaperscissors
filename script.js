@@ -32,9 +32,11 @@ function playRound (playerSelection, computerSelection){
     
     if(computerSelection === 1){
         computerSelection = rock;
+        // computerSelection = scissors;
     }
     else if(computerSelection === 2){
         computerSelection = paper;
+        // computerSelection = scissors;
     }
     else{
         computerSelection = scissors;
@@ -44,46 +46,31 @@ function playRound (playerSelection, computerSelection){
     console.log(`The computer picked: ${computerSelection}`)
 
 
-
-    //decide the outcome
-
-    //rock
-//     if(playerSelection = rock, computerSelection = rock){
-//         console.log(`You tied the round.`);
-// }
-//     if(playerSelection = rock, computerSelection = paper){
-//         console.log(`You lost the round.`);
-// }
-//      if(playerSelection = rock, computerSelection = scissors){
-//         console.log(`You won the round!`);
-// }
-
-//     //paper
-//      if(playerSelection = paper, computerSelection = rock){
-//         console.log(`You won the round!`);
-//     }
-//      if(playerSelection = paper, computerSelection = paper){
-//         console.log(`You tied the round.`);
-//     }
-//      if(playerSelection = paper, computerSelection = scissors){
-//         console.log(`You lost the round.`);
-//     }
-
-//     //scissors
-//      if(playerSelection = scissors, computerSelection = rock){
-//         console.log(`You lost the round.`);
-//     }
-//      if(playerSelection = scissors, computerSelection = paper){
-//         console.log(`You won the round!`);
-//     }
-//      if(playerSelection = scissors, computerSelection = scissors){
-//         console.log(`You tied the round.`);
-//     }
-
-
+//deciding a winner logic
 
 if (playerSelection === computerSelection){
-    return `it's a draw!`;
+    return (`it's a draw!`);
+
+}
+if (playerSelection !== computerSelection){
+    if((playerSelection === rock) && (computerSelection === paper)){
+        return (`You lost the round.`); 
+    }
+    if((playerSelection === rock) && (computerSelection === scissors)){
+        return (`You won the round!`);
+    }
+    if((playerSelection === paper) && (computerSelection === rock)){
+        return (`You won the round!`);
+    }
+    if((playerSelection === paper) && (computerSelection === scissors)){
+        return (`You lost the round.`);
+    }
+    if((playerSelection === scissors) && (computerSelection === rock)){
+        return (`You lost the round.`);
+    }
+    if((playerSelection === scissors) && (computerSelection === paper)){
+        return (`You won the round!`);
+    }
 }
 
 
