@@ -1,20 +1,25 @@
+console.log("%cGreat job on getting the console open!", "color:green; font-size: 25px");
+console.log("%cTo play you need to click on the arrow under this colored text and type in:", "color:orange; font-size: 25px")
+console.log("%cgame()", "color:blue; font-size: 25px")
+
 
 let playerScore = 0;
 let computerScore = 0;
 let scoreBoard;
 
 function playRound (playerSelection, computerSelection){
-    scoreBoard = "Your score: " + playerScore + " Computer's score: " + computerScore + "\n \n";
     let rock = "rock";
     let paper = "paper";
     let scissors = "scissors";
     let roundWin = `You won the round!`;
     let roundLost = "You lost the round. ";
     function increasePlayerScore(){
-        return playerScore++;
+        playerScore++;
+        return scoreBoard = "Your score: " + playerScore + " Computer's score: " + computerScore + "\n \n";
     }
     function increaseComputerScore(){
-        return computerScore++;
+        computerScore++;
+        return scoreBoard = "Your score: " + playerScore + " Computer's score: " + computerScore + "\n \n";
     }
     
     //player input
@@ -62,7 +67,9 @@ function playRound (playerSelection, computerSelection){
     
     //tie
     if (playerSelection === computerSelection){
-        console.log(`The round ended in a draw!`);
+        console.log("%cThe round ended in a draw!", "color:orange");
+        scoreBoard = "Your score: " + playerScore + " Computer's score: " + computerScore + "\n \n";
+
         
     }
     
@@ -94,8 +101,6 @@ function playRound (playerSelection, computerSelection){
         }
     }
     
-    
-    
 }
 
 
@@ -119,13 +124,15 @@ function game(){
     playRound()
     console.log(scoreBoard);
 
+    console.log(`final score ${scoreBoard}`)
+
     if( playerScore > computerScore){
-        console.log(`You won the game!`);
+        console.log("%cYou won the match!", "color:green; font-size: 25px");
     }
     else if( playerScore < computerScore){
-        console.log(`You lost the game.`);
+        console.log("%cYou lost the match.", "color:red; font-size: 25px");
     }
-    else{console.log(`it's a draw!`)}
+    else{console.log("%cThe match ended in a draw.", "color:orange; font-size: 25px" )}
 
 
     playerScore = 0;
@@ -136,3 +143,5 @@ function game(){
 
 
 }
+
+game();
