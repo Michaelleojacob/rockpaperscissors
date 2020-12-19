@@ -1,6 +1,8 @@
 console.log("%cGreat job on getting the console open!", "color:green; font-size: 25px");
-console.log("%cTo play you need to click on the arrow under this colored text and type in:", "color:orange; font-size: 25px")
+console.log("%cTo play you need to click on the arrow under this colored text and type in:", "color:green; font-size: 25px")
 console.log("%cgame()", "color:blue; font-size: 25px")
+console.log("%cthen hit enter", "color:green; font-size: 25px")
+console.log("\n")
 
 
 let playerScore = 0;
@@ -128,6 +130,7 @@ function game(){
 
     if( playerScore > computerScore){
         console.log("%cYou won the match!", "color:green; font-size: 25px");
+        console.log("to replay, you can type game() again, or simply")
     }
     else if( playerScore < computerScore){
         console.log("%cYou lost the match.", "color:red; font-size: 25px");
@@ -138,10 +141,5 @@ function game(){
     playerScore = 0;
     computerScore = 0;
 
-
-
-
-
 }
 
-game();
